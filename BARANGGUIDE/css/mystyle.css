@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --aqua: #b9eee9;
+    --aqua-strong: #82dcd5;
+    --aqua-dark: #2f7771;
+    --black: #101414;
+    --white: #ffffff;
+    --paper: #eef4f3;
+    --line: #d2dfdc;
+    --muted: #687674;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background: var(--paper);
+    color: var(--black);
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.app-header {
+    position: relative;
+    z-index: 1200;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: var(--black);
+    color: var(--white);
+    border-bottom: 1px solid #2a3332;
+}
+
+.app-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.app-brand > span:last-child span {
+    color: var(--aqua);
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(185, 238, 233, 0.56);
+    background: rgba(185, 238, 233, 0.08);
+    color: var(--aqua);
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-user-copy {
+    display: grid;
+    gap: 2px;
+    text-align: right;
+}
+
+.header-user-copy strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.header-user-copy span {
+    color: #9eaaa8;
+    font-size: 10px;
+}
+
+.logout-button {
+    padding: 8px 11px;
+    border: 1px solid #3b4544;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.logout-button:hover {
+    border-color: var(--aqua);
+    background: var(--aqua);
+    color: var(--black);
+}
+
+.dashboard-shell {
+    position: relative;
+    height: calc(100vh - 68px);
+}
+
+.map-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    background: #e5efed;
+}
+
+.map-error {
+    position: absolute;
+    z-index: 850;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: calc(100% - 40px);
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #cbd8d6;
+    text-align: center;
+    color: #101414;
+    line-height: 1.6;
+}
+
+.map-sidebar {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    width: min(330px, calc(100vw - 32px));
+    max-height: calc(100% - 32px);
+    overflow: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.93);
+    border: 1px solid rgba(210, 223, 220, 0.95);
+    box-shadow: 0 18px 44px rgba(16, 20, 20, 0.13);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.sidebar-heading {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-kicker {
+    color: #5b8581;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+}
+
+.sidebar-heading h1 {
+    margin-top: 8px;
+    font-size: 23px;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.sidebar-heading p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.search-block,
+.filter-block {
+    padding-top: 17px;
+}
+
+.search-block label,
+.filter-block label,
+.plot-fields label {
+    display: block;
+    margin-bottom: 7px;
+    color: #384340;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: 1fr 42px;
+}
+
+.search-row input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid var(--line);
+    border-right: 0;
+    outline: none;
+    background: var(--white);
+    color: var(--black);
+    font-size: 12px;
+}
+
+.search-row input:focus {
+    box-shadow: 0 0 0 3px rgba(130, 220, 213, 0.2);
+    border-color: var(--aqua-strong);
+}
+
+.search-row button {
+    border: 1px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.search-row button:hover {
+    background: var(--aqua);
+    color: var(--black);
+}
+
+.chosen-container {
+    width: 100% !important;
+    font-size: 11px;
+}
+
+.chosen-container-multi .chosen-choices {
+    min-height: 40px;
+    padding: 5px 7px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--white);
+    box-shadow: none;
+}
+
+.chosen-container-multi .chosen-drop {
+    border-color: var(--line);
+}
+
+.chosen-container .chosen-results li.highlighted {
+    background: var(--aqua);
+    color: var(--black);
+}
+
+.secondary-button,
+.tool-button,
+.save-button {
+    min-height: 38px;
+    border: 1px solid var(--black);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.secondary-button {
+    width: 100%;
+    margin-top: 9px;
+    background: var(--white);
+    color: var(--black);
+}
+
+.secondary-button:hover,
+.tool-button:hover {
+    border-color: var(--aqua);
+    background: var(--aqua);
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tool-button {
+    background: var(--black);
+    color: var(--white);
+}
+
+.tool-button:disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+}
+
+.tool-button.danger:hover {
+    border-color: #b84a43;
+    background: #fff3f1;
+    color: #8e2721;
+}
+
+.sidebar-help {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 9px;
+    margin-top: 18px;
+    padding: 12px;
+    background: var(--aqua-soft, #edfafa);
+    border: 1px solid #d6ece9;
+}
+
+.help-icon {
+    color: var(--aqua-dark);
+}
+
+.sidebar-help p {
+    color: #5e6e6b;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.account-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    color: #8a9694;
+    font-size: 9px;
+}
+
+.account-line span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.account-line a {
+    color: #3f706c;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.account-line a:hover {
+    text-decoration: underline;
+}
+
+.plot-panel {
+    position: absolute;
+    display: none;
+    top: 18px;
+    right: 18px;
+    z-index: 1100;
+    width: min(360px, calc(100vw - 36px));
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 44px rgba(16, 20, 20, 0.15);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.plot-panel.is-open {
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    border-color: var(--black);
+    color: var(--black);
+}
+
+.plot-heading {
+    padding-right: 34px;
+    margin-bottom: 18px;
+}
+
+.plot-heading h2 {
+    margin-top: 7px;
+    font-size: 19px;
+    letter-spacing: -0.025em;
+}
+
+.plot-fields {
+    display: grid;
+    gap: 10px;
+}
+
+.plot-fields input,
+.plot-fields textarea,
+.plot-fields select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    outline: none;
+    background: var(--white);
+    color: var(--black);
+    font-size: 11px;
+}
+
+.plot-fields input:focus,
+.plot-fields textarea:focus,
+.plot-fields select:focus {
+    border-color: var(--aqua-strong);
+    box-shadow: 0 0 0 3px rgba(130, 220, 213, 0.18);
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.form-buttons {
+    margin-top: 14px;
+}
+
+.save-button {
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+}
+
+.save-button:hover {
+    background: var(--aqua);
+    color: var(--black);
+    border-color: var(--aqua);
+}
+
+.save-button:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.km-label {
+    display: inline-block;
+    padding: 3px 7px;
+    border: 1px solid var(--black);
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--black);
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.leaflet-div-icon {
+    background: transparent;
+    border: 0;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: var(--black);
+    color: var(--white);
+}
+
+.leaflet-popup-content {
+    margin: 12px 14px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.leaflet-popup-content b {
+    color: var(--aqua);
+}
+
+.leaflet-control-zoom a,
+.leaflet-bar button {
+    background: var(--white) !important;
+    color: var(--black) !important;
+    border-color: var(--line) !important;
+}
+
+.leaflet-control-zoom a:hover,
+.leaflet-bar button:hover {
+    background: var(--aqua) !important;
+}
+
+.geocoder-control {
+    z-index: 1200;
+}
+
+.esri-geosearch {
+    margin-right: 10px !important;
+}
+
+@media (max-width: 760px) {
+    body {
+        overflow: auto;
+    }
+
+    .app-header {
+        height: auto;
+        min-height: 68px;
+        padding: 12px;
+    }
+
+    .header-user-copy {
+        display: none;
+    }
+
+    .dashboard-shell {
+        height: calc(100vh - 68px);
+    }
+
+    .map-sidebar {
+        top: 10px;
+        left: 10px;
+        width: calc(100vw - 20px);
+        max-height: 48vh;
+    }
+
+    .plot-panel {
+        top: auto;
+        right: 10px;
+        bottom: 10px;
+        width: calc(100vw - 20px);
+        max-height: 50vh;
+        overflow: auto;
+    }
+}
+
+/* Hidden controls must stay hidden even when styled. */
+[hidden] { display: none !important; }
+.tool-grid:has(#deleteBtn[hidden]) { grid-template-columns: 1fr; }
+
+.app-brand .brand-mark { overflow: hidden; border-radius: 8px; }
+.app-brand .site-logo { display:block; width:100%; height:100%; object-fit:contain; }

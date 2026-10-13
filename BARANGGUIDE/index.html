@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BARANGUIDE community mapping and information platform">
+    <title>BARANGUIDESDSD | Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="auth-shell">
+    <section class="brand-panel" aria-label="BARANGUIDE introduction">
+        <div class="brand-topline">
+            <span class="brand-rule"></span>
+            <span>INTEGRATED PUBLIC HEALTH RISK MAPPING</span>
+        </div>
+
+        <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">
+                <img src="assets/images/baranguide-logo.svg" alt="BIOGUARD logo" class="brand-logo">
+            </div>
+            <p class="brand-name">BARAN<span>GUIDE</span></p>
+            <p class="brand-tagline">Map risks. Coordinate response.</p>
+        </div>
+
+        <div class="brand-note">
+            <p>Report and monitor disease-related, animal-health, and environmental risks through a coordinated geographic information system.</p>
+        </div>
+
+        <div class="brand-footer">
+            <span>BARANGUIDE</span>
+            <span>MONITOR • VERIFY • RESPOND</span>
+        </div>
+    </section>
+
+    <section class="auth-panel">
+        <div class="form-container" id="signup-container" hidden>
+            <form id="signup-form" class="form" novalidate>
+                <div class="form-eyebrow">ACCOUNT REGISTRATION</div>
+                <h1 class="form__title">Create your account</h1>
+                <p class="form__intro">Report community hazards or review official response activities. Government access requires administrator verification.</p>
+
+                <div class="input-block">
+                    <label for="signup-name">Full name</label>
+                    <input id="signup-name" class="form__input" type="text" placeholder="Enter your full name" autocomplete="name" required>
+                </div>
+
+                <div class="input-block">
+                    <label for="signup-email">Email address</label>
+                    <input id="signup-email" class="form__input" type="email" placeholder="you@example.com" autocomplete="email" required>
+                </div>
+
+                <div class="input-block">
+                    <label for="signup-password">Password</label>
+                    <input id="signup-password" class="form__input" type="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" required>
+                </div>
+
+                <button class="button submit-btn" type="submit">
+                    <span>Create account</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+
+                <p class="form__switch">Already registered?
+                    <button type="button" class="form__switch-link" id="signup-to-signin">Sign in</button>
+                </p>
+            </form>
+        </div>
+
+        <div class="form-container" id="signin-container">
+            <form id="signin-form" class="form" novalidate>
+                <div class="form-eyebrow">ACCOUNT ACCESS</div>
+                <h1 class="form__title">Sign in to BARANGUIDE</h1>
+                <p class="form__intro">Sign in to open the community map.</p>
+
+                <div class="input-block">
+                    <label for="signin-email">Email address</label>
+                    <input id="signin-email" class="form__input" type="email" placeholder="you@example.com" autocomplete="email" required>
+                </div>
+
+                <div class="input-block">
+                    <label for="signin-password">Password</label>
+                    <input id="signin-password" class="form__input" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+                </div>
+
+                <button type="button" class="form__link" id="forgot-password">Forgot your password?</button>
+
+                <button class="button submit-btn" type="submit">
+                    <span>Sign in</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+
+                <p class="form__switch">New to BARANGUIDE?
+                    <button type="button" class="form__switch-link" id="signin-to-signup">Create an account</button>
+                </p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

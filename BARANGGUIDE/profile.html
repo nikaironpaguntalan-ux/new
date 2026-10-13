@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOGUARD | Complete Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+<main class="profile-page">
+    <header class="profile-header">
+        <a class="logo" href="login.html" aria-label="BIOGUARD home">
+            <span class="logo-mark"><img src="assets/images/baranguide-logo.svg" alt="" class="site-logo"></span>
+            <span>BARAN<span>GUIDE</span></span>
+        </a>
+        <div class="progress-note">
+            <span>STEP 02 / 02</span>
+            <span>Complete your profile</span>
+        </div>
+    </header>
+
+    <section class="profile-container">
+        <div class="profile-title">
+            <div class="title-index">02</div>
+            <div>
+                <p class="section-kicker">PROFILE DETAILS</p>
+                <h1 id="profile-title">Your Information</h1>
+                <p id="profile-description">Provide the details needed for your BARANGUIDE profile.</p>
+            </div>
+        </div>
+
+        <form id="resident-form" class="profile-form" hidden novalidate>
+            <div class="identity-label">
+                <span><i class="fa-solid fa-house-user" aria-hidden="true"></i> Resident profile</span>
+                <small>Residential address</small>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group full">
+                    <label for="resident-contact">Contact number</label>
+                    <input type="tel" id="resident-contact" name="contact_number" placeholder="09XXXXXXXXX" inputmode="numeric" autocomplete="tel" required>
+                </div>
+                <div class="form-group full">
+                    <label for="resident-address">House / street address</label>
+                    <input type="text" id="resident-address" name="house_address" placeholder="House number, street, or purok" autocomplete="street-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="resident-barangay">Barangay</label>
+                    <input type="text" id="resident-barangay" name="barangay" placeholder="Barangay" required>
+                </div>
+                <div class="form-group">
+                    <label for="resident-city">City / municipality</label>
+                    <input type="text" id="resident-city" name="city" placeholder="City or municipality" required>
+                </div>
+                <div class="form-group">
+                    <label for="resident-province">Province</label>
+                    <input type="text" id="resident-province" name="province" placeholder="Province" required>
+                </div>
+                <div class="form-group">
+                    <label for="resident-postal">Postal code</label>
+                    <input type="text" id="resident-postal" name="postal_code" placeholder="Postal code" inputmode="numeric" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">
+                <span>Save profile</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </form>
+
+        <form id="official-form" class="profile-form" hidden novalidate>
+            <div class="identity-label">
+                <span><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Government official profile</span>
+                <small>Office and designation</small>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="official-position">Position / designation</label>
+                    <input type="text" id="official-position" name="position" placeholder="e.g. Barangay Secretary" required>
+                </div>
+                <div class="form-group">
+                    <label for="government-office">Government office</label>
+                    <input type="text" id="government-office" name="government_office" placeholder="e.g. Barangay Hall" required>
+                </div>
+                <div class="form-group">
+                    <label for="official-barangay">Barangay</label>
+                    <input type="text" id="official-barangay" name="barangay" placeholder="Barangay" required>
+                </div>
+                <div class="form-group">
+                    <label for="office-address">Office address</label>
+                    <input type="text" id="office-address" name="office_address" placeholder="Office address" required>
+                </div>
+                <div class="form-group">
+                    <label for="official-city">City / municipality</label>
+                    <input type="text" id="official-city" name="city" placeholder="City or municipality" required>
+                </div>
+                <div class="form-group">
+                    <label for="official-province">Province</label>
+                    <input type="text" id="official-province" name="province" placeholder="Province" required>
+                </div>
+                <div class="form-group">
+                    <label for="official-contact">Contact number</label>
+                    <input type="tel" id="official-contact" name="contact_number" placeholder="09XXXXXXXXX" inputmode="numeric" autocomplete="tel" required>
+                </div>
+                <div class="form-group">
+                    <label for="employee-id">Employee / government ID</label>
+                    <input type="text" id="employee-id" name="employee_id" placeholder="Government ID" required>
+                </div>
+                <div class="form-group full">
+                    <label for="official-email">Official email</label>
+                    <input type="email" id="official-email" name="official_email" placeholder="official@example.gov.ph" autocomplete="email" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">
+                <span>Save profile</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </form>
+
+        <p class="privacy-note">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            Your profile is linked to your signed-in account. Government official credentials must be checked and approved by an administrator before official actions are permitted.
+        </p>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

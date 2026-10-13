@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --aqua: #b9eee9;
+    --aqua-strong: #82dcd5;
+    --black: #101414;
+    --black-soft: #202827;
+    --white: #ffffff;
+    --paper: #f4f8f7;
+    --line: #d6e2e0;
+    --muted: #6a7775;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--paper);
+    color: var(--black);
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.identity-page {
+    min-height: 100vh;
+}
+
+.identity-header {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 6vw;
+    background: var(--black);
+    color: var(--white);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.logo > span:last-child span {
+    color: var(--aqua);
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(185, 238, 233, 0.56);
+    background: rgba(185, 238, 233, 0.08);
+    color: var(--aqua);
+}
+
+.identity-header p {
+    color: #a9b6b4;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.identity-container {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 82px 0 60px;
+}
+
+.section-kicker {
+    margin-bottom: 12px;
+    color: #5c8985;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.identity-container h1 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.description {
+    max-width: 550px;
+    margin: 16px 0 42px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.identity-options {
+    display: grid;
+    gap: 14px;
+}
+
+.identity-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 44px 58px 1fr 28px;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 24px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.identity-card:hover {
+    border-color: #85cbc5;
+    background: #fcfffe;
+    box-shadow: 0 14px 28px rgba(16, 20, 20, 0.07);
+    transform: translateY(-1px);
+}
+
+.identity-card:focus-visible {
+    outline: 2px solid #4faaa3;
+    outline-offset: 4px;
+}
+
+.identity-number {
+    color: #98aaa8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.identity-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    background: var(--aqua);
+    color: var(--black);
+    font-size: 22px;
+}
+
+.identity-text {
+    display: grid;
+    gap: 6px;
+}
+
+.identity-text strong {
+    font-size: 16px;
+    letter-spacing: -0.01em;
+}
+
+.identity-text span {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.card-arrow {
+    color: #839391;
+    transition: transform 160ms ease, color 160ms ease;
+}
+
+.identity-card:hover .card-arrow {
+    color: #246f69;
+    transform: translateX(3px);
+}
+
+.privacy-note {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: #7b8987;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.privacy-note i {
+    margin-right: 6px;
+    color: #3d7b76;
+}
+
+@media (max-width: 640px) {
+    .identity-header {
+        padding: 16px 20px;
+    }
+
+    .identity-header p {
+        display: none;
+    }
+
+    .identity-container {
+        width: min(100% - 28px, 900px);
+        padding: 52px 0 36px;
+    }
+
+    .identity-card {
+        grid-template-columns: 34px 48px 1fr 20px;
+        gap: 12px;
+        padding: 18px 16px;
+    }
+
+    .identity-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .identity-number {
+        font-size: 10px;
+    }
+}
+
+.logo-mark { overflow: hidden; }
+.logo-mark .site-logo { display: block; width: 100%; height: 100%; object-fit: contain; }

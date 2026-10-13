@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOGUARD | Identity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+<main class="identity-page">
+    <header class="identity-header">
+        <a class="logo" href="login.html" aria-label="BIOGUARD home">
+            <span class="logo-mark"><img src="assets/images/baranguide-logo.svg" alt="" class="site-logo"></span>
+            <span>BARAN<span>GUIDE</span></span>
+        </a>
+        <p>Account profile setup</p>
+    </header>
+
+    <section class="identity-container">
+        <div class="section-kicker">STEP 01 / 02</div>
+        <h1>Tell us your role</h1>
+        <p class="description">Choose the profile that matches how you will use BIOGUARD.</p>
+
+        <div class="identity-options">
+            <button type="button" class="identity-card" id="resident-btn">
+                <span class="identity-number">01</span>
+                <span class="identity-icon"><i class="fa-solid fa-house-user" aria-hidden="true"></i></span>
+                <span class="identity-text">
+                    <strong>Resident</strong>
+                    <span>Submit disease and environmental risk observations and follow official intervention updates.</span>
+                </span>
+                <i class="fa-solid fa-arrow-right card-arrow" aria-hidden="true"></i>
+            </button>
+
+            <button type="button" class="identity-card" id="official-btn">
+                <span class="identity-number">02</span>
+                <span class="identity-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+                <span class="identity-text">
+                    <strong>Government Official</strong>
+                    <span>After administrator approval, verify reports and coordinate or schedule interventions.</span>
+                </span>
+                <i class="fa-solid fa-arrow-right card-arrow" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <p class="privacy-note">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            Government official status requires administrator approval. Choosing the role does not grant official access.
+        </p>
+    </section>
+</main>
+<script src="js/identity.js"></script>
+</body>
+</html>
