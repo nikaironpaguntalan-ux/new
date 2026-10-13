@@ -45,7 +45,7 @@ $identityLabel = $isAdmin ? "Administrator" : ($identity === "government_officia
             <strong><?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?></strong>
             <span><?= htmlspecialchars($identityLabel, ENT_QUOTES, 'UTF-8') ?></span>
         </div>
-        <a class="logout-button" href="signin.php">Sign out</a>
+        <a class="logout-button" href="logout.php">Sign out</a>
     </div>
 </header>
 
